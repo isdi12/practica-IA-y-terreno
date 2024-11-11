@@ -12,6 +12,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03112cc2a517dea4fba2dc1a201a61f1, type: 3}
   m_Name: PatrolState (S)
   m_EditorClassIdentifier: 
-  stateParameters: []
-  WayPoints: []
-  currentPoint: 0
+  stateParameters:
+  - actionParameters:
+    - action: {fileID: 11400000, guid: e6663bc5dc96dfb44a69d474773723fe, type: 2}
+      actionValue: 1
+    - action: {fileID: 11400000, guid: 8c555ac5805592a4abc1ff3e24137d9f, type: 2}
+      actionValue: 0
+    nextState: {fileID: 11400000, guid: 57b7f45758901264e9d999fa1999b6e2, type: 2}
+    and: 1
+  - actionParameters:
+    - action: {fileID: 11400000, guid: 035f2538a9967884f966eb91b10709cc, type: 2}
+      actionValue: 1
+    nextState: {fileID: 11400000, guid: 57b7f45758901264e9d999fa1999b6e2, type: 2}
+    and: 0
+  WayPoints:
+  - {x: 63.7, y: 1, z: 57.7}
+  - {x: 70.8, y: 1.48, z: 89}
+  - {x: 85.1, y: 1, z: 57.7}
+  currentPoint: 2

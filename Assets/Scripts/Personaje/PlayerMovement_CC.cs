@@ -87,5 +87,11 @@ public class PlayerMovement_CC : MonoBehaviour
             currentSpeed = Mathf.Lerp(currentSpeed, 0, acceleration * Time.deltaTime);
         }
     }
+
+    public bool IsRunning()
+    {
+
+        return characterController.velocity.magnitude > walkingSpeed;
+    }
 }
 
