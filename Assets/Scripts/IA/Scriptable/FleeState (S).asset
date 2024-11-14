@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a28fc767f75adf54daf3b24fdda11a2a, type: 3}
+  m_Name: FleeState (S)
+  m_EditorClassIdentifier: 
+  stateParameters:
+  - actionParameters:
+    - action: {fileID: 11400000, guid: e6663bc5dc96dfb44a69d474773723fe, type: 2}
+      actionValue: 0
+    nextState: {fileID: 11400000, guid: c31b63672dfe2124ea59b70b3756f2f1, type: 2}
+    and: 0
+  fleeDistance: 5
+  fleeSpeed: 3
