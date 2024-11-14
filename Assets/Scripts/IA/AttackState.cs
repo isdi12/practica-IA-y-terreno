@@ -10,7 +10,8 @@ public class AttackState : State
 {
     public float attackRange = 2f; // Rango de ataque
     public float attackDamage = 10f; // Daño del ataque
-    public float attackCooldown ; // Tiempo de recarga entre ataques
+    public float attackCooldown = 5; // Tiempo de recarga entre ataques
+    public float currentTime = 5; // Tiempo de recarga entre ataques
      // Tiempo del último ataque
 
     public override State Run(GameObject owner)
@@ -20,10 +21,11 @@ public class AttackState : State
         GameObject player = FindPlayer(owner);
         if (player != null)
         {
+            currentTime += Time.deltaTime;
             // Si el enemigo está dentro del rango, atacar
-            if (IsEnemyInRange(owner, player))
+            if (IsEnemyInRange(owner, player) && currentTime >= attackCooldown)
             {
-                attackCooldown = 5f;
+                currentTime = 0;
                 Attack(player);
                 
             }
