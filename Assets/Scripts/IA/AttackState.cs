@@ -10,8 +10,8 @@ public class AttackState : State
 {
     public float attackRange = 2f; // Rango de ataque
     public float attackDamage = 10f; // Daño del ataque
-    public float attackCooldown = 1f; // Tiempo de recarga entre ataques
-    private float lastAttackTime; // Tiempo del último ataque
+    public float attackCooldown ; // Tiempo de recarga entre ataques
+     // Tiempo del último ataque
 
     public override State Run(GameObject owner)
     {
@@ -23,8 +23,9 @@ public class AttackState : State
             // Si el enemigo está dentro del rango, atacar
             if (IsEnemyInRange(owner, player))
             {
+                attackCooldown = 5f;
                 Attack(player);
-                lastAttackTime = Time.time; // Actualizar el tiempo del último ataque
+                
             }
             else
             {
@@ -57,15 +58,15 @@ public class AttackState : State
 
     private void Attack(GameObject player)
     {
-        // Aquí se implementa la lógica de ataque
-        // Por ejemplo, se puede hacer daño al jugador
-        //PlayerHealth playerHealth = player.GetComponent<playerHealth>();
-        //if (playerHealth != null)
-        //{
-        //    playerHealth.TakeDamage(attackDamage);
-        //}
+       // Aquí se implementa la lógica de ataque
+        //Por ejemplo, se puede hacer daño al jugador
+        playerHealth playerHealth = player.GetComponent<playerHealth>();
+        if (playerHealth != null)
+        {
+            playerHealth.Damage(attackDamage);
+        }
 
-        //Debug.Log($"Attacked {enemy.name} for {attackDamage} damage!");
+        Debug.Log($"Attacked {player.name} for {attackDamage} damage!");
     }
 
     private void MoveTowardsEnemy(GameObject owner, GameObject player)

@@ -12,6 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 355bca57137da1a4f8106f5bdddc0c1f, type: 3}
   m_Name: SeeAction (A)
   m_EditorClassIdentifier: 
-  see: {x: 0, y: 0, z: 0}
-  visionAngle: 333
-  visionDistance: 24.8
+  visionAngle: 100
+  visionDistance: 15

@@ -16,7 +16,7 @@ MonoBehaviour:
   - actionParameters:
     - action: {fileID: 11400000, guid: e6663bc5dc96dfb44a69d474773723fe, type: 2}
       actionValue: 0
-    nextState: {fileID: 11400000, guid: c31b63672dfe2124ea59b70b3756f2f1, type: 2}
+    nextState: {fileID: 11400000, guid: 3de00c0fe647f0548834421543bcc98b, type: 2}
     and: 0
   fleeDistance: 5
   fleeSpeed: 3

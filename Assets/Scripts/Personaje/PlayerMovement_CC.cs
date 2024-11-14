@@ -29,13 +29,14 @@ public class PlayerMovement_CC : MonoBehaviour
         float mouseX = Input.GetAxis("Mouse X");
         bool jumpPressed = Input.GetKeyDown(KeyCode.Space);
         bool shiftPressed = Input.GetKey(KeyCode.LeftShift);
-
+        bool escapePressed = Input.GetKeyDown(KeyCode.Escape);
 
         // salto
         Jump(jumpPressed);
         InterpolateSpeed(shiftPressed, x, z);
         Movement(x, z, shiftPressed);
         Rotation(mouseX);
+        ReturnToMenu(escapePressed);
     }
     private void FixedUpdate()
     {
@@ -43,7 +44,6 @@ public class PlayerMovement_CC : MonoBehaviour
     }
     void Rotation(float mouseX) // para juegos en tercera persona
     {
-
         //rotation
         Vector3 rotation = new Vector3(0, mouseX, 0) * mouseSens * Time.deltaTime; // PARA HACER UNA ROTACION AUTOMATICA QUITO EL MOUSEX Y LE DOY UNA VARIABLES, TAMBIEN QUITO EL MOUSESENSE
         transform.Rotate(rotation);
@@ -92,6 +92,16 @@ public class PlayerMovement_CC : MonoBehaviour
     {
 
         return characterController.velocity.magnitude > walkingSpeed;
+    }
+
+    public bool ReturnToMenu(bool escapePressed)
+    {
+        if(escapePressed) 
+        {
+            GameManager.instance.LoadScene("Menu"); 
+            return true;
+        }
+        return false; 
     }
 }
 

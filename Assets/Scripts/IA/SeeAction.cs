@@ -7,10 +7,11 @@ using UnityEngine;
 [CreateAssetMenu(fileName = " SeeAction (A)", menuName = "ScriptableObjects/Actions/SeeAction")]
 public class SeeAction : Action
 {
-    public Vector3 see;
+   
     [Range(0f, 360f)]
     public float visionAngle = 90f; // el angulo de vision que queremos
     public float visionDistance = 2f; // la distancia de vision que queremos
+    
     public override bool Check(GameObject owner)
     {
        

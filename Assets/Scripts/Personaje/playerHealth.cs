@@ -31,7 +31,7 @@ public class playerHealth : MonoBehaviour
         }
     }
 
-    public void Damage(int amount)
+    public void Damage(float amount)
     {
         if (amount < 0)
         {
