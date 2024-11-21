@@ -12,7 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79507491b64cee54ebe60279a243a237, type: 3}
   m_Name: AttackState (S)
   m_EditorClassIdentifier: 
-  stateParameters: []
+  stateParameters:
+  - actionParameters:
+    - action: {fileID: 11400000, guid: 27f293d8884b97a4fb1ea26927070fc9, type: 2}
+      actionValue: 0
+    nextState: {fileID: 11400000, guid: 57b7f45758901264e9d999fa1999b6e2, type: 2}
+    and: 0
   attackRange: 2
   attackDamage: 10
   attackCooldown: 5
+  currentTime: 4.4419174

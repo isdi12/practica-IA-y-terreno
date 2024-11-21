@@ -16,7 +16,7 @@ public class FleeState : State
         State nextState = CheckActions(owner);
         // Obtener la posición del player
         Vector3 playerPosition = GetPlayerPosition(owner);
-        Vector3 fleeDirection = (owner.transform.position - playerPosition).normalized;
+        Vector3 fleeDirection = (owner.transform.position - playerPosition).normalized; // lo pasamos a un vector de magnitud 1
 
         // Calcular la nueva posición a la que huir
         Vector3 fleePosition = owner.transform.position + fleeDirection * fleeDistance;
@@ -29,9 +29,8 @@ public class FleeState : State
 
     private Vector3 GetPlayerPosition(GameObject owner)
     {
-        // Aquí deberías implementar la lógica para obtener la posición del enemigo
-        // Esto es solo un ejemplo. Puedes usar un sistema de detección de enemigos.
-        GameObject enemy = owner.GetComponent<TargetReferences>().target; // Suponiendo que el player tiene la etiqueta "player"
+       
+        GameObject enemy = owner.GetComponent<TargetReferences>().target; 
         return enemy ? enemy.transform.position : owner.transform.position; // Si no hay enemigo, no se mueve
     }
 

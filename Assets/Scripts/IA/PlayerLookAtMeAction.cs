@@ -6,7 +6,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = " PlayerLookAtMeAction (A)", menuName = "ScriptableObjects/Actions/PlayerLookAtMeAction")]
 public class PlayerLookAtMeAction : Action
 {
-    public override bool Check(GameObject owner)
+    public override bool Check(GameObject owner) 
     {
         GameObject target = owner.GetComponent<TargetReferences>().target; // accedemos al target
         PlayerViewList viewListComponent = target.GetComponentInChildren<PlayerViewList>();

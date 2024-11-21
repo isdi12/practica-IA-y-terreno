@@ -33,16 +33,22 @@ public class WanderState : State
 
     private void Wander(NavMeshAgent navMeshAgent)
     {
-        // Genera una nueva posición aleatoria dentro del radio de deambulación
-        Vector3 randomDirection = Random.insideUnitSphere * wanderRadius;
-        randomDirection += navMeshAgent.transform.position; // Aseguramos de que la nueva posición esté en relación con la posición actual
-
-        // Intenta establecer el destino en la nueva posición
-        NavMeshHit hit; //Se declara una variable hit que contendrá la información sobre el punto en el NavMesh que se encuentra.
-        if (NavMesh.SamplePosition(randomDirection, out hit, wanderRadius, NavMesh.AllAreas))  //si se encontramos el punto mas cercano dentro del area especificado
+        bool pointFound = false;
+        do
         {
-            navMeshAgent.SetDestination(hit.position); // Establece el destino del agente
+            // Genera una nueva posición aleatoria dentro del radio de deambulación
+            Vector3 randomDirection = Random.insideUnitSphere * wanderRadius;
+            randomDirection += navMeshAgent.transform.position; // Aseguramos de que la nueva posición esté en relación con la posición actual
+
+            // Intenta establecer el destino en la nueva posición
+            NavMeshHit hit; //Se declara una variable hit que contendrá la información sobre el punto en el NavMesh que se encuentra.
+            if (NavMesh.SamplePosition(randomDirection, out hit, wanderRadius, NavMesh.AllAreas))  //si encontramos el punto mas cercano dentro del area especificado
+            {
+                navMeshAgent.SetDestination(hit.position); // Establece el destino del agente
+                pointFound = true;
+            }
         }
+        while (!pointFound);
     }
 }
 
